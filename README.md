@@ -8,11 +8,9 @@
 #### 近期一直在做微信小程序，业务上要求在小程序里实现即时通讯的功能。这部分功能需要用到文本和语音输入及一些语音相关的手势操作。所以我写了一个控件来处理这些操作。
 
 #### 控件样式
-![文本语音输入控件](http://img.blog.csdn.net/20171107101340228?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjc2MTIxNDc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 #### 我们先来看下效果 (现在新增了右下角发送按钮！！在输入框获取到焦点后，右下角会显示发送按钮！！只不过没有更新图片。。。)
-![小程序IM输入控件](http://img.blog.csdn.net/20171107145841639?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjc2MTIxNDc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
- 
+
 目前的功能就是动态图中展示的，我们可以使用这个控件来切换输入方式（文本或语音）、获取到输入的信息、取消语音输入、语音消息录制过短过长的判断（该接口暂时还未开放），支持发送图片和其他自定义拓展内容。（语音和图片发送失败是因为小程序新版模拟器的问题，真机上没事）。
 
 ### **<font color="red">注意：本文所讲的SDK中不包含列表的展示部分及发送状态部分，SDK只测试过微信基础库1.4.0及以上版本。</font>**
@@ -26,7 +24,7 @@
 ## 集成
 
 ### 一、导入SDK相关文件
-![SDK所有文件](http://img.blog.csdn.net/20171107170921077?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjc2MTIxNDc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
 
 
 导入SDK时一定要用图中所示的路径，不然的话你就自己挨个修改wxml和wxss里面的文件路径哈。
