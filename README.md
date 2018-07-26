@@ -1,4 +1,5 @@
 # xiaochengxu-wxChat
+**如有帮助谢谢star**   :star::star::star::star::star:
 
 ## 写在前面：
  - 网上搜集了很多这方面的案例，但不是报错就是不完整，我更新的这个案例是纯前端静态的Demo。
