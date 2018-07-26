@@ -1,6 +1,6 @@
-# wechat-im
+# xiaochengxu-wxChat
 ### 微信小程序即时通讯组件
-#### 集成方式 看不到图片的话请看博客 https://blog.csdn.net/sinat_27612147/article/details/78456363
+#### 集成方式 博客 https://blog.csdn.net/sinat_27612147/article/details/78456363
 #### 关于实现方式及原理 请看 https://blog.csdn.net/sinat_27612147/article/details/78476241
 
 ## 小程序即时通讯——文本、语音输入控件 集成
