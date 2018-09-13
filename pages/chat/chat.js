@@ -70,7 +70,7 @@ Page({
         normalDataTime: utils.formatTime(new Date()),
       });
       wx.setNavigationBarTitle({
-          title: 'XXX的报告'
+          title: '与XX聊天中'
       });
       that.textButton();
       that.extraButton();
@@ -197,21 +197,32 @@ Page({
   //删除单条消息
   delMsg: function (e) {
     var that = this;
-    console.log(e);
     var magIdx = parseInt(e.currentTarget.dataset.index);
     var list = that.data.wxchatLists;
-    list.splice(magIdx, 1)
-    that.setData({
-      wxchatLists: list,
-    })
 
-    wx.showToast({
-      title: '删除成功',  //标题  
-      mask: true,  //是否显示透明蒙层，防止触摸穿透，默认：false  
-      success: function () { }, //接口调用成功的回调函数  
-      fail: function () { },  //接口调用失败的回调函数  
-      complete: function () { } //接口调用结束的回调函数  
-    }) 
+    wx.showModal({
+      title: '提示',
+      content: '确定删除此消息吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log(e);
+          list.splice(magIdx, 1);
+          that.setData({
+            wxchatLists: list,
+          });
+          // wx.showToast({
+          //   title: '删除成功',
+          //   mask: true,
+          //   icon: 'none',
+          // })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    
+
+    
   },
   //点击图片 预览大图
   seeBigImg: function (e) {

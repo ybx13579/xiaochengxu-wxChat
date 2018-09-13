@@ -7,9 +7,9 @@ input{
 }
 
 .extra-btn-style{
-    width: 50rpx;
-    height: 50rpx;
-    padding:25rpx 15rpx;
+    width: 56rpx;
+    height: 56rpx;
+    padding:20rpx 24rpx;
     display: flex;
     flex-shrink:0;
 }
@@ -23,11 +23,12 @@ input{
 }
 .input-flex-column{
     width:100%;
-    display: flex;
+    /* display: flex; */
     flex-direction:column;
     position: fixed;
     left: 0;
     bottom: 0;
+    border-top: 1rpx solid #ebebeb;
 }
 
 .list-divide-line {
@@ -37,13 +38,15 @@ input{
 }
 
 .chat-input-style{
-    border-radius:10rpx;
-    border:1rpx solid gainsboro;
-    margin-top:14rpx;
-    margin-bottom: 13rpx;
+    /* border:1rpx solid #1e1e1e; */
+    /* margin-top:14rpx;
+    margin-bottom: 13rpx; */
     padding:10rpx;
-    min-height: 51rpx;
-    background-color: #EFEFEF;
+    height: 56rpx;
+    line-height: 1;
+    background-color: #fff;
+    font-size: 32rpx;
+    color: #1e1e1e;
 }
 
 .chat-input-send-button-style{
@@ -53,4 +56,10 @@ input{
     text-align: center;
     margin: 0 10rpx;
     border-radius: 10rpx;
+    display: none;
+}
+.btn-voice-press{
+    border:1rpx solid #1e1e1e;
+    background-color: #fff;
+    border-radius: none;
 }

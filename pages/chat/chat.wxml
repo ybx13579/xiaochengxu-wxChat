@@ -6,11 +6,23 @@
         <view class="chat-content-list-time">{{normalDataTime}}</view>
         <view class="chat-content-list " >
           <image class="chat-content-list-avatar "  src="../../image/chat/voice/speak.png"></image>
-          <view class="chat-content-list-content">
+          <view class="chat-content-list-content" bindlongtap="delMsg" data-index="{{index}}">
               <view class="chat-content-list-msg"> 
-                  <view class="chat-content-list-msg-white"></view>
-                  <view  class="chat-content-list-msg-gray"></view>
                   <text selectable='true'>有什么问题快向我提问吧！</text>
+              </view>
+          </view>
+        </view>
+      </view>
+      <view >
+        <!-- 默认展示  语音 -->
+        <view class="chat-content-list-time">{{normalDataTime}}</view>
+        <view class="chat-content-list right" >
+          <image class="chat-content-list-avatar "  src="../../image/chat/voice/speak.png"></image>
+          <view class="chat-content-list-content" bindlongtap="delMsg" data-index="{{index}}">
+              <view class="chat-content-list-voice"  >
+                  <text>5s</text> 
+                  <image class='chat-voice-img' src='../../image/chat-voice-img@3x.png'></image>
+                  <view class='over-read-tip active'></view>
               </view>
           </view>
         </view>
@@ -20,56 +32,30 @@
         <view class="chat-content-list-time">{{item.dataTime}}</view>
         <view class="chat-content-list right" >
           <image class="chat-content-list-avatar "  src="{{item.userImgSrc}}"></image>
-          <view class="chat-content-list-content">
+          <view class="chat-content-list-content " bindlongtap="delMsg" data-index="{{index}}">
               <!--  文字信息模板  ↓ hidden="{{!(item.msg_type === 'text')}}" -->
               <view class="chat-content-list-msg"  hidden="{{!(item.msg_type === 'text')}}"> 
-                  <view class="chat-content-list-msg-white"></view>
-                  <view  class="chat-content-list-msg-gray"></view>
                   <text selectable='true'>{{item.textMessage}}</text>
-                  <view class='chat-content-list-msg-del' data-index="{{index}}" bindtap="delMsg">X</view>
+              <view class='over-read-tip '></view>
               </view>
 
               <!--  语音信息模板  ↓   hidden="{{!(item.msg_type === 'voice')}}" -->
-              <view class="chat-content-list-voice"  bindtap='playRecord' hidden="{{!(item.msg_type === 'voice')}}">
-                  <view class="chat-content-list-msg-white"></view>
-                  <view  class="chat-content-list-msg-gray"></view>
-                  {{item.voiceTime}}s
-                  <view class='chat-content-list-msg-del' data-index="{{index}}" bindtap="delMsg">X</view>
+              <view class="chat-content-list-voice {{item.voiceTime<10?'length1':'length3'}}"  bindtap='playRecord' hidden="{{!(item.msg_type === 'voice')}}" >
+                  <text class=''>{{item.voiceTime}}s</text> 
+                  <image class='chat-voice-img' src='../../image/chat-voice-img@3x.png'></image>
+                  <view class='over-read-tip '></view>
               </view>
 
               <!--  图片信息模板  ↓   -->
               <view class="chat-content-list-img"  hidden="{{!(item.msg_type === 'img')}}" >
-                  <image src="{{item.sendImgSrc}}" mode="aspectFit"  bindtap='seeBigImg'  data-index="{{index}}"></image>
-                  <view class='chat-content-list-msg-del' data-index="{{index}}" bindtap="delMsg">X</view>
+                  <image src="{{item.sendImgSrc}}" mode="aspectFill"  bindtap='seeBigImg'  data-index="{{index}}"></image>
+                  <!-- <view class='chat-content-list-msg-del' data-index="{{index}}" bindtap="delMsg">X</view> -->
+              <view class='over-read-tip '></view>
               </view>
           </view>
         </view>
       </view>
-        
-      <!-- <view>
-        <view class="chat-content-list-time">2018-07-25 19:14:43</view>
-        <view class="chat-content-list right" >
-          <image class="chat-content-list-avatar "  src="../../image/chat/extra/close_chat.png"></image>
-          <view class="chat-content-list-content">
-              <view class="chat-content-list-msg " hidden="{{!(item.msg_type === 'text')}}"> 
-                  <view class="chat-content-list-msg-white"></view>
-                  <view  class="chat-content-list-msg-gray"></view>
-                  <text selectable='true'>这里是望京SOHO</text>
-              </view>
-
-              <view class="chat-content-list-voice"  bindtap='playRecord'>
-                  <view class="chat-content-list-msg-white"></view>
-                  <view  class="chat-content-list-msg-gray"></view>
-                  {{voiceTime}}s
-              </view>
-
-              <view class="chat-content-list-img" >
-                  <image src="../../image/chat/extra/choose_picture.png"  mode="aspectFit"></image>
-              </view>
-          </view>
-        </view>
-      </view> -->
-
+      
     </scroll-view>
     
     

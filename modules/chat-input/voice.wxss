@@ -1,14 +1,28 @@
 
-.btn-voice-press {
-    background-color: gainsboro;
-}
 
 button{
     font-size: 32rpx;
     width:100%;
-    line-height: 74rpx;
-    margin-top: 15rpx;
-    margin-bottom: 15rpx;
+    /* margin-top: 15rpx;
+    margin-bottom: 15rpx; */
+    border:1rpx solid #1e1e1e;
+    background-color: #fff;
+    border-radius: 0;
+    height: 54rpx;
+    line-height: 56rpx;
+}
+button::after{
+  border: 0;
+}
+.btn-voice-press{
+    border:1rpx solid #1e1e1e;
+    background-color: #fff;
+    border-radius: 0;
+    height: 54rpx;
+    line-height: 56rpx;
+}
+.btn-voice-press::after{
+  border: 0;
 }
 .voice-status-style{
     position: absolute;
