@@ -13,6 +13,9 @@
 <img src="1.png" width="200"> 
 
 
+*聊天内图片可翻页查看
+
+
 ### 微信小程序即时通讯组件
 #### 集成方式 博客 https://blog.csdn.net/sinat_27612147/article/details/78456363
 #### 关于实现方式及原理 请看 https://blog.csdn.net/sinat_27612147/article/details/78476241
@@ -22,6 +25,7 @@
 ## 集成
 
 ### 一、导入SDK相关文件
+
 
 
 
